@@ -1,12 +1,14 @@
 class StudentsController < ApplicationController
   expose(:student, attributes: :student_params)
   expose(:student_subject_items) { student.subject_items }
+  expose(:students)
 
   def index
     @students = Student.all
   end
 
   def create
+
     if student.save
       redirect_to student_path(student), notice: I18n.t('shared.created', resource: 'Student')
     else
@@ -25,5 +27,11 @@ class StudentsController < ApplicationController
   def destroy
     student.destroy
     redirect_to students_path, notice: I18n.t('shared.deleted', resource: 'Student')
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name)
   end
 end
