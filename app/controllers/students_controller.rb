@@ -3,10 +3,6 @@ class StudentsController < ApplicationController
   expose(:student_subject_items) { student.subject_items }
   expose(:students)
 
-  def index
-    @students = Student.all
-  end
-
   def create
 
     if student.save
