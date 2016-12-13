@@ -1,0 +1,5 @@
+test: &test
+  database: workshops_test
+  adapter: postgresql
+  encoding: unicode
+  username: travis
