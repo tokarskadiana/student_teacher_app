@@ -59,6 +59,7 @@ RSpec.describe StudentsController do
     let!(:student) { create :student, first_name: 'John', last_name: 'Smith' }
     let(:first_name) { 'Walter' }
     let(:last_name) { 'White' }
+    let(:birthdate) {"1989-04-12 00:00:00"}
     let!(:params) do
       { id: student.id, student: { first_name: first_name } }
     end
