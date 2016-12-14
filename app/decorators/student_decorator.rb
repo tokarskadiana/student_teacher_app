@@ -12,4 +12,7 @@ class StudentDecorator < BaseDecorator
     return '0.00' if notes.length == 0
     '%.02f' % (notes.inject(0) { |acc, n| acc + n.value } / notes.length.to_f)
   end
+  def birth_date
+    birthdate.strftime("%F") if birthdate != nil
+  end
 end
