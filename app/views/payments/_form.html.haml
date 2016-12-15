@@ -1,0 +1,6 @@
+= simple_form_for payment do |f|
+  = f.input :amount
+  = f.input :payment_date
+  = f.association :student, label_method: lambda { |student| "#{student.decorate.full_name}" }, value_method: :id, label: "student"
+  = link_to t('shared.back'), payments_path, class: 'btn btn-default'
+  = f.button :submit

@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     get :subjects
     get :teacher
   end
+  resources :payments do
+    get :payment
+  end
   scope :reports do
     get 'subjects', to: 'reports#subjects', as: 'report_subjects'
-end
+  end
   root to: 'visitors#index', as: 'root'
 end
