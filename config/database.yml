@@ -13,3 +13,8 @@ development:
 test: &test
   <<: *connection
   database: workshops_test
+
+production:
+  <<: *connection
+  adapter: postgresql
+  database: workshops_production

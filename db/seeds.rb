@@ -1,6 +1,6 @@
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
-User.create!(email: 'admin@admin.com',password: 'adminadmin')
+User.create!(email: 'admn@admin.com',password: 'adminadmin')
 
 3.times do
   Teacher.create!(
@@ -22,7 +22,7 @@ end
   Student.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    birthdate: Faker::Date.backward(rand(5000...10000)
+    birthdate: Faker::Date.backward(rand(5000...10000))
   )
 end
 
@@ -43,8 +43,7 @@ end
 
 Student.all.each do |student|
   rand(3..8).times do
-    Payment.create(value: rand(900..1500), date: Faker::Date.backward(rand(1...300)), student: student)
+    Payment.create(amount: rand(900..1500), payment_date: Faker::Date.backward(rand(1...300)), student: student)
   end
 end
-
 puts "Seeds: done"

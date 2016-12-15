@@ -29,12 +29,10 @@ ActiveRecord::Schema.define(version: 20161215122314) do
   create_table "payments", force: :cascade do |t|
     t.decimal  "amount"
     t.date     "payment_date"
-    t.integer  "student_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "student_id"
   end
-
-  add_index "payments", ["student_id"], name: "index_payments_on_student_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name"

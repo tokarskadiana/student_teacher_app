@@ -6,5 +6,6 @@ class Student < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true
   accepts_nested_attributes_for :subject_items
+  accepts_nested_attributes_for :subject_item_notes
   accepts_nested_attributes_for :payments
 end
