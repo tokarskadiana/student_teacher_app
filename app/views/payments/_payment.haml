@@ -2,3 +2,7 @@
   %td= link_to "#{payment.student.decorate.full_name}", id: payment.id, action: :show
   %td= payment.payment_date
   %td= payment.amount
+  %td
+    = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
+      %button.btn.btn-default
+        = fa_icon "times"
